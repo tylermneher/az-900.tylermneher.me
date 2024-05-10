@@ -1,0 +1,34 @@
+{
+  "name": "az-900.tylermneher.me",
+  "version": "1.0.0",
+  "description": "Microsoft AZ-900 Certification Verification",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "e2e:chromium": "cypress run --browser chromium",
+    "e2e:edge": "cypress run --browser edge",
+    "e2e:firefox": "cypress run --browser firefox",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylermneher/az-900.tylermneher.me.git"
+  },
+  "keywords": [
+    "microsoft",
+    "azure",
+    "az900",
+    "az-900",
+    "certification",
+    "verification"
+  ],
+  "author": "Tyler M. Neher [tyler@neherdata.com]",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/tylermneher/az-900.tylermneher.me/issues"
+  },
+  "homepage": "https://github.com/tylermneher/az-900.tylermneher.me#readme",
+  "devDependencies": {
+    "cypress": "^13.9.0"
+  }
+}

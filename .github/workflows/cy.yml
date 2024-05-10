@@ -1,0 +1,47 @@
+name: Cypress E2E Testing
+
+on:
+  # Runs on pushes targeting the default branch
+  workflow_run:
+    workflows: ["Deploy Static Content to Pages"]
+    branches: ["main"]
+    types:
+      - completed
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    name: Cypress E2E Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress E2E on Edge
+        uses: cypress-io/github-action@v6
+        with:
+          browser: edge
+          spec: |
+            cypress/e2e/404.cy.js
+            cypress/e2e/contact.cy.js
+            cypress/e2e/index.cy.js
+            cypress/e2e/portfolio.cy.js
+      - name: Cypress E2E on Chrome
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          spec: |
+            cypress/e2e/404.cy.js
+            cypress/e2e/contact.cy.js
+            cypress/e2e/index.cy.js
+            cypress/e2e/portfolio.cy.js
+      - name: Cypress E2E on Firefox
+        uses: cypress-io/github-action@v6
+        with:
+          browser: firefox
+          spec: |
+            cypress/e2e/404.cy.js
+            cypress/e2e/contact.cy.js
+            cypress/e2e/index.cy.js
+            cypress/e2e/portfolio.cy.js
