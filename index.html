@@ -64,7 +64,9 @@
 
 
       <footer id="footer" class="footer">
-        <p>© 2025 <a data-cy="footer-microsofttos"
+        <p>© <span id="currentYear"></span> <script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script> <a data-cy="footer-microsofttos"
             href="https://learn.microsoft.com/en-us/legal/termsofuse">Microsoft</a>
           and <a data-cy="footer-tylermneher" href="https://www.tylermneher.me">Tyler M. Neher</a></p>
       </footer>
